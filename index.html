@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تولدت مبارک نسا 🎂</title>
+<meta name="description" content="یک سایت کوچک، برای یک آدم بزرگ." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─────────── لودر ─────────── -->
+<div id="loader">
+  <div class="loader-heart">🤍</div>
+  <p class="loader-text">دارم یه چیزی برات می‌سازم…</p>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ─────────── پس‌زمینه‌ی ذرات ─────────── -->
+<canvas id="bg-canvas"></canvas>
+<div class="aurora aurora-1"></div>
+<div class="aurora aurora-2"></div>
+<div class="aurora aurora-3"></div>
+
+<!-- ─────────── دکمه‌ی صدا ─────────── -->
+<button id="sound-toggle" class="sound-toggle" title="صدا">
+  <span class="sound-icon">🔈</span>
+</button>
+
+<main>
+
+  <!-- ─────────── هیرو ─────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker">۲۷ آبان ۱۴۰۵</p>
+      <h1 class="hero-title">
+        <span class="line">تولدت مبارک</span>
+        <span class="name" data-text="نسا">نسا</span>
+      </h1>
+      <p class="hero-sub">این سایت نه کادوست، نه کیک — یه تیکه از دلمه که کدش کردم.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-scroll="#letter">شروع کنیم 💌</button>
+        <button class="btn btn-ghost" data-scroll="#music">آهنگ و زیرنویس 🎵</button>
+      </div>
+    </div>
+    <div class="scroll-hint"><span></span>اسکرول کن</div>
+  </section>
+
+  <!-- ─────────── نامه ─────────── -->
+  <section class="section" id="letter">
+    <div class="section-head reveal">
+      <span class="chip">فصل اول</span>
+      <h2>نامه‌ای که تایپ شد، نه نوشته</h2>
+    </div>
+
+    <div class="letter-card reveal">
+      <div class="letter-glow"></div>
+      <p class="typewriter" id="typewriter"></p>
+      <div class="letter-body">
+        <p>نسا جان، نمی‌دونم اسم این حس چیه که وقتی اسمت میاد، یه چیزی توی سینه‌م هم‌زمان سنگین و سبک می‌شه. فقط می‌دونم از هر چیزی که بلدم، فقط همین رو مطمئنم.</p>
+        <p>امروز روز توئه. من نمی‌تونم کنارت باشم، نمی‌تونم شمع‌ها رو با هم فوت کنیم، ولی تونستم یه کاری کنم که این فاصله یه ذره کوچیک‌تر بشه: این صفحه‌ها، این آهنگ، این بازی — همه‌شون یه بهانه‌ان که بگم یادم هستی. همیشه.</p>
+        <p>امیدوارم سالِ جدیدِ زندگیت پر باشه از خنده‌های بی‌دلیل، از خواب‌های راحت، از خبرهای خوب که اول به من می‌دی. و من همون‌جایی می‌مونم که هستم؛ کنارِ تو، حتی وقتی هفتصد کیلومتر بینمونه.</p>
+        <p class="sign">— آرش</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── موزیک + زیرنویس ─────────── -->
+  <section class="section" id="music">
+    <div class="section-head reveal">
+      <span class="chip">فصل دوم</span>
+      <h2>یه آهنگ که خودش، همین‌جا ساخته شد</h2>
+      <p class="section-sub">هیچ فایلی دانلود نشده؛ نُت‌ها همین الان توی مرورگرت زنده می‌شن و متنش هم‌زمان می‌آد.</p>
+    </div>
+
+    <div class="player reveal" id="player">
+      <div class="player-top">
+        <div class="cover">
+          <div class="cover-ring"></div>
+          <div class="cover-disc">🎧</div>
+        </div>
+        <div class="player-meta">
+          <h3>برای نسا</h3>
+          <p>آرش × مرورگر تو</p>
+          <div class="visualizer" id="visualizer"></div>
+        </div>
+      </div>
+
+      <div class="subtitles" id="subtitles">
+        <p class="sub-line" id="sub-line">برای شروع، دکمه‌ی پخش رو بزن…</p>
+      </div>
+
+      <div class="player-controls">
+        <button id="play-btn" class="play-btn"><span>▶</span></button>
+        <div class="progress-wrap">
+          <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+          <div class="time"><span id="time-now">0:00</span> / <span id="time-total">0:32</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── بازی ─────────── -->
+  <section class="section" id="game">
+    <div class="section-head reveal">
+      <span class="chip">فصل سوم</span>
+      <h2>بازی: قلب‌ها رو بگیر</h2>
+      <p class="section-sub">با موس یا کلیدهای ← → حرکت کن. ۱۵ تا قلب توی ۴۵ ثانیه بگیر تا برنده شی.</p>
+    </div>
+
+    <div class="game-wrap reveal">
+      <div class="game-hud">
+        <div class="hud-item"><span>قلب</span><b id="score">0</b></div>
+        <div class="hud-item"><span>زمان</span><b id="timer">45</b></div>
+        <div class="hud-item"><span>رکورد</span><b id="best">0</b></div>
+      </div>
+      <div class="game-stage">
+        <canvas id="game-canvas"></canvas>
+        <div class="game-overlay" id="game-overlay">
+          <h3 id="overlay-title">آماده‌ای؟</h3>
+          <p id="overlay-text">قلب‌ها می‌بارن. تو فقط باید نذاری زمین بخورن.</p>
+          <button class="btn btn-primary" id="game-start">شروع بازی</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── کیک ─────────── -->
+  <section class="section" id="cake">
+    <div class="section-head reveal">
+      <span class="chip">فصل چهارم</span>
+      <h2>شمع‌ها رو فوت کن</h2>
+      <p class="section-sub">روی کیک کلیک کن (یا دکمه رو بزن). آرزو کن — منم همون رو می‌خوام.</p>
+    </div>
+
+    <div class="cake-scene reveal">
+      <div class="cake" id="cake">
+        <div class="candle"><div class="flame" id="flame"></div></div>
+        <div class="candle c2"><div class="flame"></div></div>
+        <div class="candle c3"><div class="flame"></div></div>
+        <div class="cake-top"></div>
+        <div class="cake-mid"></div>
+        <div class="cake-base"></div>
+        <div class="cake-plate"></div>
+      </div>
+      <button class="btn btn-primary" id="blow-btn">فوت! 💨</button>
+      <p class="cake-msg" id="cake-msg"></p>
+    </div>
+  </section>
+
+  <!-- ─────────── شیشه‌ی آرزو ─────────── -->
+  <section class="section" id="wish">
+    <div class="section-head reveal">
+      <span class="chip">فصل پنجم</span>
+      <h2>شیشه‌ی حرف‌های نگفته</h2>
+    </div>
+    <div class="wish-wrap reveal">
+      <button class="wish-jar" id="wish-btn">
+        <span class="jar">🫙</span>
+        <span class="jar-hint">یکی رو بکش بیرون</span>
+      </button>
+      <p class="wish-text" id="wish-text">…</p>
+    </div>
+  </section>
+
+  <!-- ─────────── پایان ─────────── -->
+  <section class="section finale" id="finale">
+    <div class="finale-inner reveal">
+      <div class="big-heart">🤍</div>
+      <h2>هر روزت تولد باشه، نسا</h2>
+      <p>این سایت تموم شد، ولی حرف‌هام نه. هر وقت دلت گرفت، برگرد — همین‌جا منتظرتم.</p>
+      <button class="btn btn-ghost" id="confetti-btn">یه عالمه کاغذرنگی 🎉</button>
+      <p class="credit">ساخته‌شده با کد، بی‌خوابی و فسنجون — آرش</p>
+    </div>
+  </section>
+
+</main>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
